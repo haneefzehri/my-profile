@@ -193,28 +193,76 @@ body {
     transform: translateY(-10px);
  }
 
-.icon-circle {
+.social-circles {
+
+    display: flex;
+    flex-direction: row;
  width: 70px;
 height: 70px;
- background: rgba(99, 102, 241, 0.1);
+justify-content: space-between;
+margin: 10px;
+
+ /* background: rgba(99, 102, 241, 0.1);
  border-radius: 50%;
  display: flex;
 align-items: center;
  justify-content: center;
   margin-bottom: 25px;
    color: var(--primary);
-  font-size: 1.5rem; }
+  font-size: 1.5rem; */
+ }
 
 
-.footer { background: #05070a; padding: 100px 10% 50px; border-top: 1px solid #1a1e26; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 100px; margin-bottom: 80px; }
-.footer-brand p { margin-top: 20px; color: var(--text-muted); }
-.footer-links h4, .footer-contact h4 { margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-.footer-links ul { list-style: none; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { color: white; padding-left: 5px; }
-.footer-bar { border-top: 1px solid #1a1e26; padding-top: 30px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+.footer {
+     background: #05070a;
+      padding: 100px 10% 50px;
+       border-top: 1px solid #1a1e26;
+ }
+
+.footer-grid {
+     display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+       gap: 100px;
+        margin-bottom: 80px;
+ }
+
+.footer-brand p { 
+    margin-top: 20px;
+     color: var(--text-muted);
+ }
+
+.footer-links h4, .footer-contact h4 {
+     margin-bottom: 25px;
+      text-transform: uppercase;
+       font-size: 0.8rem;
+        letter-spacing: 2px;
+ }
+
+.footer-links ul {
+     list-style: none;
+ }
+
+.footer-links li {
+     margin-bottom: 12px;
+ }
+
+.footer-links a { 
+    color: var(--text-muted); 
+    text-decoration: none; transition: 0.3s;
+ }
+
+.footer-links a:hover {
+     color: white;
+      padding-left: 5px;
+     }
+
+.footer-bar { 
+    border-top: 1px solid #1a1e26;
+     padding-top: 30px; 
+     text-align: center;
+      color: var(--text-muted);
+       font-size: 0.8rem; 
+}
 
 
 
@@ -404,7 +452,113 @@ align-items: center;
 }
 
 
-@media (max-width: 992px) {
-    .contact-container { grid-template-columns: 1fr; }
-    .contact-form-panel { padding: 30px; }
+
+
+@media (max-width: 768px) {
+    /* 1. Navbar Adjustments */
+    .navbar {
+        padding: 20px 5%;
+    }
+    .nav-links {
+        display: none; /* Mobile menu hidden by default */
+    }
+    .nav-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. Hero Section - Text size chota kiya taake screen par fit aaye */
+    .hero {
+        height: auto;
+        padding: 120px 5% 60px;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem; /* Pehle 4.5rem tha */
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 1rem;
+        margin: 0 auto 30px;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .link {
+        margin-left: 0;
+    }
+
+    /* 3. About Section - Grid ko single column kiya */
+    .about {
+        padding: 60px 5%;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-info ul {
+        text-align: left;
+        display: inline-block;
+    }
+
+    /* 4. Services - Grid adjustment */
+    .services {
+        padding: 60px 5%;
+    }
+    .services-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .service-box {
+        padding: 30px 20px;
+    }
+
+    /* 5. Contact Section - Form aur Text ko stack kiya */
+    .contact-modern {
+        padding: 60px 5%;
+    }
+    .contact-container {
+        grid-template-columns: 1fr; /* Dono panels ek ke niche ek */
+        gap: 40px;
+    }
+    .contact-heading {
+        font-size: 1.8rem;
+    }
+    .contact-form-panel {
+        padding: 30px 20px;
+    }
+    .input-grid {
+        grid-template-columns: 1fr; /* Name aur Email ek column mein */
+    }
+
+    /* 6. Footer - Layout adjust */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .footer-links ul {
+        padding-bottom: 20px;
+    }
+}
+
+/* Extra small devices (Phones under 480px) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .stat-card {
+        padding: 20px;
+    }
+    .stat-card h3 {
+        font-size: 1.8rem;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
 }
